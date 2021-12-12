@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Data;
 using OnlineStore.Models.Account;
@@ -61,6 +62,7 @@ namespace OnlineStore.Controllers.Account
             return ValidationProblem();
         }
         
+        [Authorize]
         public IActionResult Edit()
         {
             return NotFound("edit");
